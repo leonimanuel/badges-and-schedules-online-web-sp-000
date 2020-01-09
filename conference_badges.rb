@@ -20,7 +20,12 @@ def assign_rooms(speaker_array)
 end
 
 def printer(attendees)
-  puts batch_badge_creator(attendees)
-  puts assign_rooms(attendees)
+  batch_badge_creator(attendees).each do |badge|
+    puts badge
+  end
+
+  assign_rooms(attendees).each do |assignment|
+    puts assignment
+  end
 end
-printer(["Edsger", "Ada", "Charles", "Alan", "Grace", "Linus", "Matz"])
+# printer(["Edsger", "Ada", "Charles", "Alan", "Grace", "Linus", "Matz"])
